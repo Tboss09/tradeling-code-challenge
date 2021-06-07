@@ -7,15 +7,15 @@ import { cacheExchange } from '@urql/exchange-graphcache'
 import App from './App'
 import './index.css'
 const cache = cacheExchange({})
-
+// 
 const client = new Client({
  url: 'https://api.github.com/graphql',
- exchange: { dedupExchange, cache, fetchExchange },
+ exchanges: [dedupExchange, cache, fetchExchange ],
  fetchOptions: () => {
   return {
    headers: {
     'Content-Type': 'application/json',
-    Authorization: `bearer  ${process.env.REACT_APP_NOT_SECRET_CODE}`,
+    authorization: `Bearer  ${process.env.REACT_APP_NOT_SECRET_CODE}`,
    },
   }
  },
