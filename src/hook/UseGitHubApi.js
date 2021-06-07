@@ -34,6 +34,40 @@ const USER_QUERY = gql`
  }
 `
 
+const REPO_QUERY = gql`
+ query RepoSearchQuery($filter: String!) {
+  search(query: $filter, type: REPOSITORY, first: 12) {
+   edges {
+    node {
+     ... on Repository {
+      id
+      nameWithOwner
+      owner {
+       id
+       login
+       avatarUrl(size: 30)
+      }
+      languages(first: 1, orderBy: { field: SIZE, direction: DESC }) {
+       nodes {
+        name
+        id
+        color
+       }
+      }
+      description
+      stargazers {
+       totalCount
+      }
+      issues {
+       totalCount
+      }
+     }
+    }
+   }
+  }
+ }
+`
+
 const UseGitHubApi = () => {
  const [filter, setFilter] = React.useState('')
  const handleTyping = e => setFilter(e.target.value)
@@ -41,7 +75,7 @@ const UseGitHubApi = () => {
  const [result] = useQuery({
   query: USER_QUERY,
   variables: { filter },
-  pause :!filter
+  pause: !filter,
  })
 
  return {
