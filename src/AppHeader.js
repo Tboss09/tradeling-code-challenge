@@ -2,8 +2,8 @@ import React from 'react'
 import { FiGithub } from 'react-icons/fi'
 const AppHeader = () => {
  return (
-  <div className="flex  items-center   my-10">
-   <div className="icon mr-4">
+  <div className="flex  items-center   my-10 ml-2">
+   <div className="icon mr-3 ">
     <FiGithub className="w-9 h-9 " fill="#000" />
    </div>
    <div className="name">

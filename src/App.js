@@ -6,14 +6,14 @@ import SearchContainer from './components/SearchResult/SearchContainer'
 import Context from './components/Context/Context'
 
 const App = () => {
- const { result, handleTyping } = UseGitHubApi()
+ const { result, handleTyping, handleRequest, request } = UseGitHubApi()
 
  return (
-  <div className="mx-2">
+  <div className="mx-1">
    <AppHeader />
-   <SearchInput onTyping={handleTyping} />
+   <SearchInput onTyping={handleTyping} handleRequest={handleRequest} />
    {/* Search Result */}
-   <Context.Provider value={result}>
+   <Context.Provider value={{ result: result, request: request }}>
     <SearchContainer />
    </Context.Provider>
   </div>

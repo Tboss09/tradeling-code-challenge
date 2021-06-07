@@ -1,10 +1,8 @@
 import React from 'react'
-import UseGitHubApi from '../../hook/UseGitHubApi'
-const SearchInput = ({ onTyping }) => {
-    
+const SearchInput = ({ onTyping, handleRequest }) => {
  return (
-  <div className=" flex justify-evenly">
-   <div className="relative w-7/12">
+  <div className=" flex justify-evenly lg:justify-start">
+   <div className="relative w-7/12 lg:w-4/12">
     <input
      type="text"
      id="name-with-label"
@@ -19,8 +17,9 @@ const SearchInput = ({ onTyping }) => {
 
    <select
     className="block w-24
-     text-gray-700 py-2 px-3  bg-white rounded-md  focus:outline-none focus:ring-primary-500 border-transparent shadow-md"
+     text-gray-700 py-2 px-3  bg-white rounded-md  focus:outline-none focus:ring-primary-500 border-transparent shadow-md lg:ml-4"
     name="animals"
+    onChange={handleRequest}
    >
     <option value="user">Users</option>
     <option value="repo">Repo</option>

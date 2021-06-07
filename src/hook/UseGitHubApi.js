@@ -1,11 +1,11 @@
 import { gql } from '@urql/core'
-import React from 'react'
+import React, { useState } from 'react'
 import { useQuery } from 'urql'
 
 // When the Users option is checked, this runs
 const USER_QUERY = gql`
  query MyQuery2($filter: String!) {
-  search(query: $filter, type: USER, first: 10) {
+  search(query: $filter, type: USER, first: 30) {
    edges {
     node {
      ... on User {
@@ -36,12 +36,13 @@ const USER_QUERY = gql`
 
 const REPO_QUERY = gql`
  query RepoSearchQuery($filter: String!) {
-  search(query: $filter, type: REPOSITORY, first: 12) {
+  search(query: $filter, type: REPOSITORY, first: 30) {
    edges {
     node {
      ... on Repository {
       id
       nameWithOwner
+      shortDescriptionHTML(limit: 80)
       owner {
        id
        login
@@ -54,7 +55,7 @@ const REPO_QUERY = gql`
         color
        }
       }
-      description
+
       stargazers {
        totalCount
       }
@@ -70,17 +71,25 @@ const REPO_QUERY = gql`
 
 const UseGitHubApi = () => {
  const [filter, setFilter] = React.useState('')
+ const [request, setRequest] = useState(false)
+
  const handleTyping = e => setFilter(e.target.value)
+ const handleRequest = () => setRequest(!request)
 
  const [result] = useQuery({
-  query: USER_QUERY,
+  query: request ? REPO_QUERY : USER_QUERY, //if user should select (user) send USER_QUERY else Repo_query
   variables: { filter },
-  pause: !filter,
+  //   Only fetch the data when something is typed in
+  pause: filter.trim().length > 0 ? false : true,
  })
+
+ console.log(result)
 
  return {
   handleTyping,
   result,
+  handleRequest,
+  request,
  }
 }
 
