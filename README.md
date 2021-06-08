@@ -18,11 +18,11 @@
 
 ### Then you create a `.env` in the root of your folder and then create a `environmental variable`. in the format    
 
-> `  REACT_APP_NOT_SECRET_CODE = < your-personal-token >`.
+> ### `  REACT_APP_NOT_SECRET_CODE = < your-personal-token >`.
 
 afterwards Run 
-> `yarn install`
+> ### `yarn install`
 
 in the root of the folder then
 
-> `yarn start`
+>### `yarn start`
