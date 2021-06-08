@@ -9,7 +9,7 @@ const App = () => {
  const { result, handleTyping, handleRequest, request } = UseGitHubApi()
 
  return (
-  <div className="mx-1">
+  <div className="mx-1 ">
    <AppHeader />
    <SearchInput onTyping={handleTyping} handleRequest={handleRequest} />
    {/* Search Result */}

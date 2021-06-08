@@ -21,7 +21,7 @@ const User = ({ user }) => {
  return (
   <>
    <div className="w-full sm:w-1/2 md:w-1/2 lg:w-2/6  px-2 mb-4">
-    <div className="shadow-xl drop-shadow-xl bg-white rounded-md h-64 pb-3    p-4 ">
+    <div className="shadow-xl drop-shadow-xl bg-white rounded-md h-60 pb-3    p-4 ">
      {/* Profile here first */}
      <div className="profile flex items-start  h-20  w-12/12 ">
       {/* Profile image */}
@@ -35,21 +35,21 @@ const User = ({ user }) => {
       </div>
       {/* Profile image */}
 
-      {/* Profile name */}
-      <div className="name flex leading-3 ml-4">
+      <div className="name flex leading-3 ml-8">
        <a href={url}>
         <h2 className="text-xl truncate w-48 capitalize text-blue-500 leading-5 font-bold">
          {name ? name : 'Null'}
         </h2>
 
-        <p className="text-lg  text-gray-600 font-normal     ">
-         {login ? login : '?'}
+        {/* Profile name */}
+        <p className="text-base  text-gray-600 font-normal     ">
+         {login ? login : 'Null'}
         </p>
         <p className="flex items-center">
          <span>
-          <ImLocation2 className=" mr-2  h-4 w-4" color="#3684CC" />
+          <ImLocation2 className=" mr-2  h-3 w-3" color="#3684CC" />
          </span>
-         <span className="text-base leading-5 text-gray-600 font-normal w-28  truncate ">
+         <span className="text-sm leading-5 text-gray-600 font-normal w-28  truncate ">
           {location ? location : '?'}
          </span>
         </p>
@@ -60,8 +60,8 @@ const User = ({ user }) => {
 
      {/* Bio/Description */}
 
-     <div className="bio  mb-2 mt-0    ">
-      <p className="h-16 mr-4 text-gray-700 font-light overflow-clip  flex items-center  overflow-hidden text-base  leading-snug ">
+     <div className="bio  mb-2 mt-0 ml-2   ">
+      <p className="h-14 mr-4 text-gray-700 font-light overflow-clip  flex items-center   text-base  leading-snug ">
        {bio
         ? bio.length >= 80
           ? bio.slice(0, 80) + '...'
@@ -71,12 +71,12 @@ const User = ({ user }) => {
      </div>
 
      {/* Twitter username */}
-     <div className="twitter   mt-1 mb-1 h-8  flex items-center justify-ev w-32 justify-between truncate">
+     <div className="twitter   ml-2  h-7   flex items-center    truncate">
       <span>
-       <FaTwitter className="h-6 w-6" color="#03A9F4" />
+       <FaTwitter className="h-6 w-6 " color="#03A9F4" />
       </span>
-      <span className=" ">
-       {twitterUsername ? '@' + twitterUsername : 'Not found'}
+      <span className=" pl-4">
+       {twitterUsername ? '@twitter ' + twitterUsername : 'Not found'}
       </span>
      </div>
 

@@ -7,5 +7,6 @@
  body {
   background: #f7fafc;
   font-family: 'Nunito Sans', sans-serif;
+  @apply relative
  }
 }

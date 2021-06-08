@@ -45,7 +45,7 @@ const Repo = ({ repo }) => {
      {/* Language name/language color */}
 
      {/* Bio of Repo */}
-     <div className="mt-2 h-16  overflow-hidden overflow-clip mr-3">
+     <div className="mt-2 h-16 flex items-center ml-2  overflow-hidden overflow-clip mr-3">
       <p className="text-lg leading-snug font-light  text-gray-500">
        {shortDescriptionHTML ? shortDescriptionHTML : 'No Description given'}
       </p>
