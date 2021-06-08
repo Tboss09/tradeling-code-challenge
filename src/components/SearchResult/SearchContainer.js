@@ -13,13 +13,13 @@ const SearchContainer = () => {
  if (error) return <Error error={error} />
 
  return (
-     <div className="flex flex-wrap  my-8  font-light">
-      {!request
-       ? data !== undefined &&
-         data.search.edges.map(user => <User key={user.node.id} user={user} />)
-       : data !== undefined &&
-         data.search.edges.map(repo => <Repo key={repo.node.id} repo={repo} />)}
-     </div>
+  <div className="flex flex-wrap  my-8  font-light">
+   {!request
+    ? data !== undefined &&
+      data.search.edges.map(user => <User key={user.node.id} user={user} />)
+    : data !== undefined &&
+      data.search.edges.map(repo => <Repo key={repo.node.id} repo={repo} />)}
+  </div>
  )
 }
 
