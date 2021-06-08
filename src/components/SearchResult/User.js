@@ -26,14 +26,12 @@ const User = ({ user }) => {
      <div className="profile flex items-start  h-20  w-12/12 ">
       {/* Profile image */}
       <div>
-       <a href="#">
-        <img
-         className="inline-block h-12 w-12 rounded-full object-cover ring-4 ring-gray-200 
+       <img
+        className="inline-block h-12 w-12 rounded-full object-cover ring-4 ring-gray-200 
           shadow-2xl"
-         src={avatarUrl}
-         alt={`${name || login}'s Profile`}
-        />
-       </a>
+        src={avatarUrl}
+        alt={`${name || login}'s Profile`}
+       />
       </div>
       {/* Profile image */}
 

@@ -83,7 +83,6 @@ const UseGitHubApi = () => {
   pause: filter.trim().length > 0 ? false : true,
  })
 
- console.log(result)
 
  return {
   handleTyping,
