@@ -4,6 +4,10 @@
 
 ---
 
-[Check it out 👈]("https://tradeling-code-challenge-tau.vercel.app" 'Tradeling code challenge - Github Search ')
+### [Check it out ](https://tradeling-code-challenge-tau.vercel.app "Tradeling-Code-Project" )
+
+<div align ="center">
 
 ![](demo.gif)
+
+</div>
